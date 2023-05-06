@@ -1,5 +1,5 @@
 {{ define "content" }}
-    <section class="hero is-small">
+    <section class="hero">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <p class="title">
@@ -27,32 +27,24 @@
                     </div>
                     <div class="card-content">
                         <div class="content is-size-6">
-                            Fir's magic expression
-                            <code>
-                                @fir:event-name:event-state::template-name
-                            </code>
-                            piggyback's on
-                            <a
-                                href="https://alpinejs.dev/directives/on#custom-events"
-                                >alpinejs event binding syntax</a
-                            >
-                            to declare
-                            <a href="https://pkg.go.dev/html/template"
-                                >html/templates</a
-                            >
-                            to be re-rendered on the server. In plain english,
-                            the expression reads:
-                            <blockquote class="is-italic my-2">
-                                When the event named <code>inc</code> is
-                                triggered, and the state change response is
-                                <code> ok </code> then re-render the template
-                                named <code>count</code> on the server and
-                                return its value in
-                                <code>$event.detail</code> which is used by the
-                                helper function <code> $fir.replace() </code> to
-                                update the inner content of the div on which the
-                                event listener is declared.
-                            </blockquote>
+                            <p class="has-text-weight-semibold my-2">
+                                When the handler response for event
+                                <code>inc</code> is <code> ok </code> then
+                                re-render the template named
+                                <code>count</code> on the server and return the
+                                html output to the event listener as a
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">
+                                    CustomEvent</a
+                                >. The
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail"
+                                    >CustomEvent.detail</a
+                                >
+                                property is used by the alpinejs plugin helper
+                                <code> $fir.replace() </code> to update the div
+                                on which the listener is declared.
+                            </p>
                         </div>
                     </div>
                 </div>
