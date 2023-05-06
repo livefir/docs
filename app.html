@@ -1,33 +1,88 @@
 {{ define "content" }}
-    <section class="hero">
+    <section class="hero is-small">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <p class="title">Fir is a toolkit to build reactive web apps</p>
+                <p class="title">
+                    Build progressively enhanced reactive html apps
+                </p>
                 <p class="subtitle">
-                    Using <a href="https://golang.org/">Go</a>,
+                    using <a href="https://golang.org/">Go</a>,
                     <a href="https://pkg.go.dev/html/template">html/template</a>
                     & <a href="https://alpinejs.dev/">alpinejs</a>
                 </p>
             </div>
         </div>
     </section>
-    <section
-        class="section"
-        style="max-height:200px">
+    <section class="section">
         <div class="columns">
-            <div class="column is-6">
+            <div class="column is-8 is-offset-2">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img
+                                src="./static/images/fir_magic.svg"
+                                alt="fir's magic
+                            expression " />
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content is-size-6">
+                            Fir's magic expression
+                            <code>
+                                @fir:event-name:event-state::template-name
+                            </code>
+                            piggyback's on
+                            <a
+                                href="https://alpinejs.dev/directives/on#custom-events"
+                                >alpinejs event binding syntax</a
+                            >
+                            to declare
+                            <a href="https://pkg.go.dev/html/template"
+                                >html/templates</a
+                            >
+                            to be re-rendered on the server. In plain english,
+                            the expression reads:
+                            <blockquote class="is-italic my-2">
+                                When the event named <code>inc</code> is
+                                triggered, and the state change response is
+                                <code> ok </code> then re-render the template
+                                named <code>count</code> on the server and
+                                return its value in
+                                <code>$event.detail</code> which is used by the
+                                helper function <code> $fir.replace() </code> to
+                                update the inner content of the div on which the
+                                event listener is declared.
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section
+        class="section box"
+        style="">
+        <div class="columns">
+            <div class="column is-5">
                 <div
                     class="content"
                     x-data>
-                    <p class="is-size-5">
-                        A <b>Fir</b> web page starts of as a standard
-                        server-side rendered page which on user-interactions
-                        reloads to show the new state of the page.
+                    <h2>
+                        Start with
+                        <a href="https://pkg.go.dev/html/template"
+                            >html/template</a
+                        >
+                    </h2>
+                    <p class="is-size-6">
+                        A <b>Fir</b> web page begins as a standard server-side
+                        rendered page which reloads to show the new state on
+                        user interaction. Click the buttons below to see it in
+                        action.
                     </p>
 
                     <div>
                         {{ block "count" . }}
-                            <div>
+                            <div class="py-2 is-size-4">
                                 Count:
                                 {{ .count }}
                             </div>
@@ -35,22 +90,32 @@
                     </div>
                     <form method="post">
                         <button
+                            class="button is-success"
                             formaction="/?event=inc"
                             type="submit">
                             +
                         </button>
                         <button
+                            class="button is-danger"
                             formaction="/?event=dec"
                             type="submit">
                             -
                         </button>
                     </form>
+                    <div class="is-size-6 my-5">
+                        When the html form is submitted, its is handled on the
+                        server in <code>onEvent</code> functions registered for
+                        <code>inc</code> and <code>dec</code>. The
+                        <code>action/formaction</code> attribute must be of the
+                        format <code>/?event=inc</code> where
+                        <code>inc</code> is the event name.
+                    </div>
                 </div>
             </div>
             <div
-                class="column is-6"
+                class="column is-6 is-offset-1"
                 x-data="{tab: 'tab1'}">
-                <div class="tabs">
+                <div class="tabs is-boxed">
                     <ul>
                         <li :class="{ 'is-active': tab === 'tab1' }">
                             <a @click.prevent="tab = 'tab1'">counter.html</a>
@@ -65,6 +130,84 @@
                 </div>
                 <div x-show="tab === 'tab2'">
                     <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fcounter.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="section box"
+        style="">
+        <div class="columns">
+            <div class="column is-5">
+                <div
+                    class="content"
+                    x-data>
+                    <h2>
+                        Enhance with
+                        <a href="https://alpinejs.dev/">alpinejs</a>
+                    </h2>
+                    <p class="is-size-6">
+                        Later we use fir's alpinejs plugin to enhance the form
+                        submission and receive the re-rendered template as an
+                        event. The event is handled by the
+                        <code>$fir.replace()</code> helper function which
+                        updates the inner content of the div on which the event
+                        listener is declared.
+                    </p>
+
+                    <div x-data>
+                        <div
+                            @fir:inc:ok::count1.window="$fir.replace()"
+                            @fir:dec:ok::count1.window="$fir.replace()">
+                            {{ block "count1" . }}
+                                <div class="py-2 is-size-4">
+                                    Count:
+                                    {{ .count }}
+                                </div>
+                            {{ end }}
+                        </div>
+                        <form
+                            method="post"
+                            @submit.prevent="$fir.submit()">
+                            <button
+                                class="button is-success"
+                                formaction="/?event=inc"
+                                type="submit">
+                                +
+                            </button>
+                            <button
+                                class="button is-danger"
+                                formaction="/?event=dec"
+                                type="submit">
+                                -
+                            </button>
+                        </form>
+                    </div>
+                    <div class="is-size-6 my-5">
+                        As you can notice, the count value is updated without a
+                        page reload.
+                    </div>
+                </div>
+            </div>
+            <div
+                class="column is-6 is-offset-1"
+                x-data="{tab: 'tab1'}">
+                <div class="tabs is-boxed">
+                    <ul>
+                        <li :class="{ 'is-active': tab === 'tab1' }">
+                            <a @click.prevent="tab = 'tab1'">counter.html</a>
+                        </li>
+                        <li :class="{ 'is-active': tab === 'tab2' }">
+                            <a @click.prevent="tab = 'tab2'"> counter.go</a>
+                        </li>
+                    </ul>
+                </div>
+                <div x-show="tab === 'tab1'">
+                    <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcount.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+                </div>
+                <div x-show="tab === 'tab2'">
+                    <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcounter.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
                 </div>
             </div>
         </div>

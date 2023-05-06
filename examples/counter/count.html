@@ -4,9 +4,7 @@
         {{ block "count" . }}
             <div>Count: {{ .count }}</div>
         {{ end }}
-        <form
-            method="post"
-            @submit.prevent="$fir.submit()">
+        <form method="post">
             <button
                 formaction="/?event=inc"
                 type="submit">
