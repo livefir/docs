@@ -1,0 +1,51 @@
+{{ define "navbar" }}
+    <nav
+        x-data="{navbarMenuOpen: false}"
+        class="navbar has-shadow">
+        <div class="container is-fluid">
+            <div class="navbar-brand">
+                <a
+                    class="navbar-item"
+                    href="/">
+                    <span class="icon-text">
+                        <span class="icon">
+                            <i
+                                aria-hidden="true"
+                                class="fa-solid fa-tree"></i>
+                        </span>
+                        <span><strong>livefir</strong></span>
+                    </span>
+                </a>
+                <div
+                    class="navbar-burger"
+                    :class="{ 'is-active': navbarMenuOpen }"
+                    @click="navbarMenuOpen=!navbarMenuOpen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div
+                class="navbar-menu"
+                :class="{ 'is-active': navbarMenuOpen }">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a
+                                class="button is-ghost"
+                                href="/docs">
+                                <span>docs</span>
+                            </a>
+                            <a
+                                class="button is-ghost"
+                                href="/examples">
+                                <span>examples</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+{{ end }}

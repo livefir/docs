@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <script
-            defer
-            src="https://unpkg.com/@livefir/fir@latest/dist/fir.min.js"></script>
-        <script
-            defer
-            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    </head>
-    <body>
-        <div x-data>
+{{ define "content" }}
+    <section class="section">
+        <div
+            class="container"
+            x-data>
             <div
                 @fir:inc:ok::count.window="$fir.replace()"
                 @fir:dec:ok::count.window="$fir.replace()">
@@ -35,5 +28,5 @@
                 </button>
             </form>
         </div>
-    </body>
-</html>
+    </section>
+{{ end }}

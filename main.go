@@ -7,11 +7,13 @@ import (
 	"github.com/livefir/fir"
 )
 
-func index() fir.RouteOptions {
+func indexRoute() fir.RouteOptions {
 	var count int32
 	return fir.RouteOptions{
-		fir.ID("livefir-docs"),
+		fir.ID("livefir-index"),
 		fir.Content("app.html"),
+		fir.Layout("layout.html"),
+		fir.Partials("partials"),
 		fir.OnLoad(func(ctx fir.RouteContext) error {
 			return ctx.KV("count", atomic.LoadInt32(&count))
 		}),
@@ -26,6 +28,8 @@ func index() fir.RouteOptions {
 
 func main() {
 	controller := fir.NewController("livefir-docs", fir.DevelopmentMode(true))
-	http.Handle("/", controller.RouteFunc(index))
+	http.Handle("/", controller.RouteFunc(indexRoute))
+	http.Handle("/docs", controller.RouteFunc(docsRoute))
+	http.Handle("/examples", controller.RouteFunc(examplesRoute))
 	http.ListenAndServe(":8080", nil)
 }

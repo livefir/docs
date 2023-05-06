@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ template "header" . }}
+    <body>
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                {{ template "navbar" . }}
+                {{ .fir.Error "onload" }}
+                <div class="columns my-4">
+                    <div class="column is-4">
+                        <aside class="menu">
+                            <p class="menu-label">Learn</p>
+                            <ul class="menu-list">
+                                <li>
+                                    <a class="is-active">Getting Started</a>
+                                    <ul>
+                                        <li><a>Introduction</a></li>
+                                        <li><a>Installation</a></li>
+                                        <li><a>Project Layout</a></li>
+                                    </ul>
+                                    <a class="">Tutorials</a>
+                                    <ul>
+                                        <li><a>Live Counter(short)</a></li>
+                                        <li><a>Twitter clone(long)</a></li>
+                                    </ul>
+                                    <a class="">Core Concepts</a>
+                                    <ul>
+                                        <li><a>Routing</a></li>
+                                        <li><a>Loading data</a></li>
+                                        <li><a>Events</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p class="menu-label">Reference</p>
+                            <ul class="menu-list">
+                                <li><a>Go server api</a></li>
+                                <li><a>Alpine.js plugin</a></li>
+                                <li><a>CLI</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column is-8">
+                        {{ template "content" . }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
