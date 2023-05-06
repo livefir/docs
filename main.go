@@ -31,5 +31,6 @@ func main() {
 	http.Handle("/", controller.RouteFunc(indexRoute))
 	http.Handle("/docs", controller.RouteFunc(docsRoute))
 	http.Handle("/examples", controller.RouteFunc(examplesRoute))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.ListenAndServe(":8080", nil)
 }

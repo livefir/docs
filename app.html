@@ -1,32 +1,61 @@
 {{ define "content" }}
-    <section class="section">
-        <div
-            class="container"
-            x-data>
-            <div
-                @fir:inc:ok::count.window="$fir.replace()"
-                @fir:dec:ok::count.window="$fir.replace()">
-                {{ block "count" . }}
-                    <div>
-                        Count:
-                        {{ .count }}
-                    </div>
-                {{ end }}
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">Fir is a toolkit to build reactive web apps</p>
+                <p class="subtitle">
+                    Using <a href="https://golang.org/">Go</a>,
+                    <a href="https://pkg.go.dev/html/template">html/template</a>
+                    & <a href="https://alpinejs.dev/">alpinejs</a>
+                </p>
             </div>
-            <form
-                method="post"
-                @submit.prevent="$fir.submit()">
-                <button
-                    formaction="/?event=inc"
-                    type="submit">
-                    +
-                </button>
-                <button
-                    formaction="/?event=dec"
-                    type="submit">
-                    -
-                </button>
-            </form>
+        </div>
+    </section>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-6">
+                <div
+                    class="content"
+                    x-data>
+                    <p>
+                        A <b>Fir</b> web page starts of as a standard
+                        server-side rendered page which on user-interactions
+                        reloads to show the new state of the page.
+                    </p>
+
+                    <div>
+                        {{ block "count" . }}
+                            <div>
+                                Count:
+                                {{ .count }}
+                            </div>
+                        {{ end }}
+                    </div>
+                    <form method="post">
+                        <button
+                            formaction="/?event=inc"
+                            type="submit">
+                            +
+                        </button>
+                        <button
+                            formaction="/?event=dec"
+                            type="submit">
+                            -
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="tabs">
+                    <ul>
+                        <li class="is-active"><a>counter.go</a></li>
+                        <li><a>Music</a></li>
+                        <li><a>Videos</a></li>
+                        <li><a>Documents</a></li>
+                    </ul>
+                </div>
+                <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Ffir%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fmain.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+            </div>
         </div>
     </section>
 {{ end }}
