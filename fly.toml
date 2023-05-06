@@ -13,7 +13,7 @@ processes = []
   builder = "paketobuildpacks/builder:base"
   buildpacks = ["gcr.io/paketo-buildpacks/go"]
 [build.args]
-  BP_KEEP_FILES=  '*.html:partials/*'
+  BP_KEEP_FILES=  '*.html:partials/*:static/*'
 
 [env]
   PORT = "8080"
