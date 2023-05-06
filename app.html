@@ -13,7 +13,7 @@
             </div>
         </div>
     </section>
-    <section class="section">
+    <section class="mb-6">
         <div class="columns">
             <div class="column is-8 is-offset-2">
                 <div class="card">
@@ -28,7 +28,7 @@
                     <div class="card-content">
                         <div class="content is-size-6">
                             <p class="has-text-weight-semibold my-2">
-                                When the handler response for event
+                                If the handler response for event
                                 <code>inc</code> is <code> ok </code> then
                                 re-render the template named
                                 <code>count</code> on the server and return the
@@ -59,12 +59,12 @@
                 <div
                     class="content"
                     x-data>
-                    <h2>
-                        Start with
+                    <h1 class="title is-size-3">
+                        1. Start with
                         <a href="https://pkg.go.dev/html/template"
                             >html/template</a
                         >
-                    </h2>
+                    </h1>
                     <p class="is-size-6">
                         A <b>Fir</b> web page begins as a standard server-side
                         rendered page which reloads to show the new state on
@@ -100,7 +100,8 @@
                         <code>inc</code> and <code>dec</code>. The
                         <code>action/formaction</code> attribute must be of the
                         format <code>/?event=inc</code> where
-                        <code>inc</code> is the event name.
+                        <code>inc</code> is the event name. Notice there is no
+                        javascript in the page.
                     </div>
                 </div>
             </div>
@@ -135,10 +136,10 @@
                 <div
                     class="content"
                     x-data>
-                    <h2>
-                        Enhance with
+                    <h1 class="title is-size-3">
+                        2. Enhance with
                         <a href="https://alpinejs.dev/">alpinejs</a>
-                    </h2>
+                    </h1>
                     <p class="is-size-6">
                         Later we use fir's alpinejs plugin to enhance the form
                         submission and receive the re-rendered template as an
@@ -178,7 +179,23 @@
                     </div>
                     <div class="is-size-6 my-5">
                         As you can notice, the count value is updated without a
-                        page reload.
+                        page reload. The server side code remains unchanged.
+                    </div>
+                    <div class="content is-size-6">
+                        Fir's magic expression
+                        <code>
+                            @fir:event-name:event-state::template-name
+                        </code>
+                        piggybacks on
+                        <a
+                            href="https://alpinejs.dev/directives/on#custom-events"
+                            >alpinejs event binding syntax</a
+                        >
+                        to declare
+                        <a href="https://pkg.go.dev/html/template"
+                            >html/templates</a
+                        >
+                        to be re-rendered on the server.
                     </div>
                 </div>
             </div>
