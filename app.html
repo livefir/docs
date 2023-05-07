@@ -13,40 +13,27 @@
             </div>
         </div>
     </section>
-    <section class="mb-6">
-        <div class="columns">
-            <div class="column is-8 is-offset-2">
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image">
-                            <img
-                                src="./static/images/fir_magic.png"
-                                alt="fir's magic
-                            expression " />
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content is-size-6">
-                            <p class="has-text-weight-semibold my-2">
-                                If the handler response for event
-                                <code>inc</code> is <code> ok </code> then
-                                re-render the template named
-                                <code>count</code> on the server and return the
-                                html output to the event listener as a
-                                <a
-                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">
-                                    CustomEvent</a
-                                >. The
-                                <a
-                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail"
-                                    >CustomEvent.detail</a
-                                >
-                                property is used by the alpinejs plugin helper
-                                <code> $fir.replace() </code> to update the div
-                                on which the listener is declared.
-                            </p>
-                        </div>
-                    </div>
+    <section class="section">
+        <div class="container has-text-centered block">
+            <a
+                class="button is-large is-responsive is-dark"
+                href="/docs">
+                Get started
+            </a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container content has-text-weight-semibold is-size-5">
+            <div class="columns">
+                <div class="column is-10 is-offset-1">
+                    <p class="">
+                        The Fir toolkit is designed for Go developers with
+                        moderate HTML/CSS & JS skills who want to progressively
+                        build reactive web apps without mastering complex web
+                        frameworks. It includes a Go library, an alpinejs
+                        plugin, and a CLI. Scroll to learn more
+                        <i>&#8595;</i>
+                    </p>
                 </div>
             </div>
         </div>
@@ -196,6 +183,36 @@
                             >html/templates</a
                         >
                         to be re-rendered on the server.
+                    </div>
+                    <div class="card px-2 py-2">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img
+                                    src="./static/images/fir_magic.png"
+                                    alt="fir's magic
+                            expression " />
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="has-text-weight-semibold">
+                                If the handler response for event
+                                <code>inc</code> is <code> ok </code> then
+                                re-render the template named
+                                <code>count</code> on the server and return the
+                                html output to the event listener as a
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">
+                                    CustomEvent</a
+                                >. The
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail"
+                                    >CustomEvent.detail</a
+                                >
+                                property is used by the alpinejs plugin helper
+                                <code> $fir.replace() </code> to update the div
+                                on which the listener is declared.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
