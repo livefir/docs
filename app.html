@@ -13,25 +13,26 @@
             </div>
         </div>
     </section>
-    <section class="">
+    {{/* <section class="">
         <div class="container has-text-centered block">
-            <a
-                class="button is-large is-responsive is-dark"
-                href="/docs">
-                Get started
-            </a>
+        <a
+        class="button is-large is-responsive is-dark"
+        href="/docs">
+        Get started
+        </a>
         </div>
-    </section>
-    <section class="section">
+        </section>
+    */}}
+    <section class="">
         <div class="container content has-text-weight-semibold is-size-5">
             <div class="columns">
-                <div class="column is-10 is-offset-1">
-                    <p class="">
+                <div class="column is-8 is-offset-2">
+                    <p class="box">
                         The Fir toolkit is designed for Go developers with
                         moderate HTML/CSS & JS skills who want to progressively
                         build reactive web apps without mastering complex web
-                        frameworks. It includes a Go library, an alpinejs
-                        plugin, and a CLI. Scroll to learn more
+                        frameworks. It includes a Go library and an alpinejs
+                        plugin. Scroll to see quick start.
                         <i>&#8595;</i>
                     </p>
                 </div>
@@ -87,9 +88,20 @@
                         <code>inc</code> and <code>dec</code>. The
                         <code>action/formaction</code> attribute must be of the
                         format <code>/?event=inc</code> where
-                        <code>inc</code> is the event name. Notice there is no
-                        javascript in the page.
+                        <code>inc</code> is the event name. Notice there is
+                        <b>no javascript</b> in the page.
                     </div>
+                    Go the the directory where you have these files and run:
+                    <pre
+                        class="mt-2"><code class="language-bash">go run counter.go</code></pre>
+
+                    <p class="block mt-4">
+                        Open your browser and go to
+                        <a href="http://localhost:9867"
+                            >http://localhost:9867</a
+                        >
+                        to see the counter in action.
+                    </p>
                 </div>
             </div>
             <div
@@ -106,7 +118,7 @@
                     </ul>
                 </div>
                 <div x-show="tab === 'tab1'">
-                    <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fcount.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+                    <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fcounter.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
                 </div>
                 <div x-show="tab === 'tab2'">
                     <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fcounter.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
@@ -214,6 +226,17 @@
                             </p>
                         </div>
                     </div>
+                    Go the the directory where you have these files and run:
+                    <pre
+                        class="mt-2"><code class="language-bash">go run counter.go</code></pre>
+
+                    <p class="block mt-4">
+                        Open your browser and go to
+                        <a href="http://localhost:9867"
+                            >http://localhost:9867</a
+                        >
+                        to see the counter in action.
+                    </p>
                 </div>
             </div>
             <div
@@ -230,7 +253,7 @@
                     </ul>
                 </div>
                 <div x-show="tab === 'tab1'">
-                    <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcount.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+                    <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcounter.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
                 </div>
                 <div x-show="tab === 'tab2'">
                     <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcounter.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>

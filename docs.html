@@ -1,3 +1,81 @@
 {{ define "content" }}
-    Coming soon ...
+    <div class="content px-2 py-2">
+        <p class="block">
+            Lets quickly get started. Assuming you have the latest version of Go
+            installed, you need two files <b>counter.go</b> and
+            <b>count.html</b>.
+        </p>
+
+        <p>
+            First we will render a pure html page on the server and then enhance
+            it with Fir's alpinejs plugin to make it reactive and update the
+            counter without page reloads.
+        </p>
+
+        <h2>1. Start with HTML</h2>
+
+        <div
+            class=""
+            style="width: 95%;important! height: 400px; margin: 0 auto;"
+            x-data="{tab: 'tab1'}">
+            <div class="tabs is-boxed">
+                <ul>
+                    <li :class="{ 'is-active': tab === 'tab2' }">
+                        <a @click.prevent="tab = 'tab2'"> counter.go</a>
+                    </li>
+                    <li :class="{ 'is-active': tab === 'tab1' }">
+                        <a @click.prevent="tab = 'tab1'">count.html</a>
+                    </li>
+                </ul>
+            </div>
+            <div x-show="tab === 'tab1'">
+                <script src="https://emgithub.com/embed-v2.js?&target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fcount.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=off&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+            </div>
+            <div x-show="tab === 'tab2'">
+                <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter%2Fcounter.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=off&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+            </div>
+        </div>
+        Go the the directory where you have these files and run:
+        <pre
+            class="mt-2"><code class="language-bash">go run counter.go</code></pre>
+
+        <p class="block mt-4">
+            Open your browser and go to
+            <a href="http://localhost:9867">http://localhost:9867</a>
+            to see the counter in action.
+        </p>
+
+        <h2>2. Enhance with Alpine.js</h2>
+
+        <div
+            class=""
+            style="width: 95%;important! height: 400px; margin: 0 auto;"
+            x-data="{tab: 'tab1'}">
+            <div class="tabs is-boxed">
+                <ul>
+                    <li :class="{ 'is-active': tab === 'tab2' }">
+                        <a @click.prevent="tab = 'tab2'"> counter.go</a>
+                    </li>
+                    <li :class="{ 'is-active': tab === 'tab1' }">
+                        <a @click.prevent="tab = 'tab1'">count.html</a>
+                    </li>
+                </ul>
+            </div>
+            <div x-show="tab === 'tab1'">
+                <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcount.html&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=off&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+            </div>
+            <div x-show="tab === 'tab2'">
+                <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Flivefir%2Fdocs%2Fblob%2Fmain%2Fexamples%2Fcounter-live%2Fcounter.go&style=atom-one-dark&type=code&showBorder=on&showLineNumbers=off&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+            </div>
+        </div>
+        Go the the directory where you have these files and run:
+        <pre
+            class="mt-2"><code class="language-bash">go run counter.go</code></pre>
+
+        <p class="block mt-4">
+            Open your browser and go to
+            <a href="http://localhost:9867">http://localhost:9867</a>
+            to see the counter in action.
+        </p>
+    </div>
 {{ end }}

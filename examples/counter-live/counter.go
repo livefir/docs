@@ -11,7 +11,7 @@ func index() fir.RouteOptions {
 	var count int32
 	return fir.RouteOptions{
 		fir.ID("counter"),
-		fir.Content("count.html"),
+		fir.Content("counter.html"),
 		fir.OnLoad(func(ctx fir.RouteContext) error {
 			return ctx.KV("count", atomic.LoadInt32(&count))
 		}),
