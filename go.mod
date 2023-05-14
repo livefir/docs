@@ -2,7 +2,7 @@ module github.com/livefir/docs
 
 go 1.20
 
-require github.com/livefir/fir v0.1.10
+require github.com/livefir/fir v0.2.0
 
 require (
 	github.com/Masterminds/goutils v1.1.1 // indirect
@@ -34,12 +34,16 @@ require (
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
+	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/tdewolff/minify/v2 v2.12.4 // indirect
 	github.com/tdewolff/parse/v2 v2.6.4 // indirect
 	github.com/tidwall/gjson v1.14.4 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/crypto v0.3.0 // indirect
 	golang.org/x/exp v0.0.0-20221204150635-6dcec336b2bb // indirect
 	golang.org/x/net v0.2.0 // indirect

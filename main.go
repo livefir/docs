@@ -27,7 +27,7 @@ func indexRoute() fir.RouteOptions {
 }
 
 func main() {
-	controller := fir.NewController("livefir-docs", fir.DevelopmentMode(true))
+	controller := fir.NewController("livefir-docs", fir.DevelopmentMode(false))
 	http.Handle("/", controller.RouteFunc(indexRoute))
 	http.Handle("/docs", controller.RouteFunc(docsRoute))
 	http.Handle("/examples", controller.RouteFunc(examplesRoute))

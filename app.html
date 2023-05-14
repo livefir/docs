@@ -161,9 +161,7 @@
                     </p>
 
                     <div x-data>
-                        <div
-                            @fir:inc:ok::count1.window="$fir.replace()"
-                            @fir:dec:ok::count1.window="$fir.replace()">
+                        <div @fir:[inc:ok,dec:ok]::count1="$fir.replace()">
                             {{ block "count1" . }}
                                 <div class="py-2 is-size-4">
                                     Count:
@@ -212,7 +210,7 @@
                         <div class="card-image">
                             <figure class="image">
                                 <img
-                                    src="./static/images/fir_magic.png"
+                                    src="./static/images/fir_alpine_event.png"
                                     alt="fir's magic
                             expression " />
                             </figure>
@@ -238,6 +236,17 @@
                             </p>
                         </div>
                     </div>
+
+                    <p class="mt-4">
+                        Alternatively there is a short-hand form for wiring up
+                        multiple events with the same action.
+                    </p>
+                    <figure class="image">
+                        <img
+                            src="./static/images/fir_event_filter.png"
+                            alt="fir's magic
+                            expression " />
+                    </figure>
                     <div class="mt-4">
                         Go the the directory where you have these files and run:
                         <pre
