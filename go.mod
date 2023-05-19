@@ -2,7 +2,7 @@ module github.com/livefir/docs
 
 go 1.20
 
-require github.com/livefir/fir v0.2.2
+require github.com/livefir/fir v0.2.3
 
 require (
 	github.com/Masterminds/goutils v1.1.1 // indirect
@@ -26,6 +26,7 @@ require (
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/imdario/mergo v0.3.15 // indirect
+	github.com/klauspost/compress v1.10.3 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lithammer/shortuuid/v4 v4.0.0 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
@@ -39,7 +40,9 @@ require (
 	github.com/tidwall/gjson v1.14.4 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
+	github.com/timshannon/bolthold v0.0.0-20210913165410-232392fc8a6a // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	go.etcd.io/bbolt v1.3.6 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.9.0 // indirect
 	golang.org/x/exp v0.0.0-20230515195305-f3d0a9c9a5cc // indirect
@@ -47,4 +50,5 @@ require (
 	golang.org/x/sys v0.8.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
 	k8s.io/klog/v2 v2.100.1 // indirect
+	nhooyr.io/websocket v1.8.7 // indirect
 )
