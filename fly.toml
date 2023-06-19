@@ -15,7 +15,7 @@ kill_timeout = "5s"
   builder = "paketobuildpacks/builder:base"
   buildpacks = ["gcr.io/paketo-buildpacks/go"]
   [build.args]
-    BP_KEEP_FILES = "*.html:partials/*:static/*"
+    BP_KEEP_FILES = "*.html:*.md:partials/*:static/*"
 
 [env]
   PORT = "8080"

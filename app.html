@@ -27,13 +27,11 @@
         <div class="container content is-size-5">
             <div class="columns">
                 <div class="column is-8 is-offset-2">
-                    <p class="box">
-                        The <b>Fir</b> toolkit is designed for Go developers
-                        with moderate html/css & js skills who want to
-                        progressively build reactive web apps without mastering
-                        complex web frameworks. It includes a Go library and an
-                        Alpine.js plugin.
-                    </p>
+                    <div class="content">
+                        <div class="box">
+                            {{ markdown "app.md" "hero" }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,61 +56,32 @@
                 <div
                     class="content"
                     x-data>
-                    <h1 class="title is-size-3">
-                        1. Start with
-                        <a href="https://pkg.go.dev/html/template"
-                            >html/template</a
-                        >
-                    </h1>
-                    <p class="is-size-6">
-                        A <b>Fir</b> web page begins as a standard server-side
-                        rendered page which reloads to show the new state on
-                        user interaction. Click the buttons below to see it in
-                        action.
-                    </p>
-
-                    <div>
-                        {{ block "count" . }}
-                            <div class="py-2 is-size-4">
-                                Count:
-                                {{ .count }}
-                            </div>
-                        {{ end }}
+                    {{ markdown "app.md" "section1.0" }}
+                    <div class="block">
+                        <div>
+                            {{ block "count" . }}
+                                <div class="py-2 is-size-4">
+                                    Count:
+                                    {{ .count }}
+                                </div>
+                            {{ end }}
+                        </div>
+                        <form method="post">
+                            <button
+                                class="button is-success"
+                                formaction="/?event=inc"
+                                type="submit">
+                                +
+                            </button>
+                            <button
+                                class="button is-danger"
+                                formaction="/?event=dec"
+                                type="submit">
+                                -
+                            </button>
+                        </form>
                     </div>
-                    <form method="post">
-                        <button
-                            class="button is-success"
-                            formaction="/?event=inc"
-                            type="submit">
-                            +
-                        </button>
-                        <button
-                            class="button is-danger"
-                            formaction="/?event=dec"
-                            type="submit">
-                            -
-                        </button>
-                    </form>
-                    <div class="is-size-6 my-5">
-                        When the html form is submitted, its is handled on the
-                        server in <code>onEvent</code> functions registered for
-                        <code>inc</code> and <code>dec</code>. The
-                        <code>action/formaction</code> attribute must be of the
-                        format <code>/?event=inc</code> where
-                        <code>inc</code> is the event name. Notice there is
-                        <b>no javascript</b> in the page.
-                    </div>
-                    Go the the directory where you have these files and run:
-                    <pre
-                        class="mt-2"><code class="language-bash">go run counter.go</code></pre>
-
-                    <p class="block mt-4">
-                        Open your browser and go to
-                        <a href="http://localhost:9867"
-                            >http://localhost:9867</a
-                        >
-                        to see the counter in action.
-                    </p>
+                    {{ markdown "app.md" "section1.1" }}
                 </div>
             </div>
             <div
@@ -146,22 +115,12 @@
                 <div
                     class="content"
                     x-data>
-                    <h1 class="title is-size-3">
-                        2. Enhance with
-                        <a href="https://alpinejs.dev/">alpinejs</a>
-                    </h1>
-                    <p class="is-size-6">
-                        Later we use fir's alpinejs plugin to enhance the form
-                        submission and receive the re-rendered template as an
-                        event. The event is handled by the
-                        <code>$fir.replace()</code> helper function which
-                        updates the inner content of the div on which the event
-                        listener is declared. Click the buttons below to see
-                        reactivity in action. Open this page in two tabs to see
-                        the changes in one tab reflected in the other.
-                    </p>
+                    {{ markdown "app.md" "section2.0" }}
 
-                    <div x-data>
+
+                    <div
+                        class="block"
+                        x-data>
                         <div @fir:[inc:ok,dec:ok]::count1="$fir.replace()">
                             {{ block "count1" . }}
                                 <div class="py-2 is-size-4">
@@ -187,80 +146,16 @@
                             </button>
                         </form>
                     </div>
-                    <div class="is-size-6 my-5">
-                        As you can notice, the count value is updated without a
-                        page reload. The server side code remains unchanged.
-                    </div>
-                    <div class="content is-size-6">
-                        Fir's magic expression
-                        <code>
-                            @fir:event-name:event-state::template-name
-                        </code>
-                        piggybacks on
-                        <a
-                            href="https://alpinejs.dev/directives/on#custom-events"
-                            >alpinejs event binding syntax</a
-                        >
-                        to declare
-                        <a href="https://pkg.go.dev/html/template"
-                            >html/templates</a
-                        >
-                        to be re-rendered on the server.
-                    </div>
-                    <div class="card px-2 py-2">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img
-                                    src="./static/images/fir_alpine_event.png"
-                                    alt="fir's magic
-                            expression " />
-                            </figure>
-                        </div>
+                    {{ markdown "app.md" "section2.1" }}
+                    <div class="card px-2 py-2 mb-4">
                         <div class="card-content">
                             <p class="has-text-weight-semibold">
-                                If the handler response for event
-                                <code>inc</code> is <code> ok </code> then
-                                re-render the template named
-                                <code>count</code> on the server and return the
-                                html output to the event listener as a
-                                <a
-                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">
-                                    CustomEvent</a
-                                >. The
-                                <a
-                                    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail"
-                                    >CustomEvent.detail</a
-                                >
-                                property is used by the alpinejs plugin helper
-                                <code> $fir.replace() </code> to update the div
-                                on which the listener is declared.
+                                {{ markdown "app.md" "section2.2" }}
                             </p>
                         </div>
                     </div>
 
-                    <p class="mt-4">
-                        Alternatively there is a short-hand form for wiring up
-                        multiple events with the same action.
-                    </p>
-                    <figure class="image">
-                        <img
-                            src="./static/images/fir_event_filter.png"
-                            alt="fir's magic
-                            expression " />
-                    </figure>
-                    <div class="mt-4">
-                        Go the the directory where you have these files and run:
-                        <pre
-                            class="mt-2"><code class="language-bash">go run counter.go</code></pre>
-                    </div>
-
-                    <p class="block mt-4">
-                        Open your browser and go to
-                        <a href="http://localhost:9867"
-                            >http://localhost:9867</a
-                        >
-                        to see the reactive counter in action.
-                    </p>
+                    {{ markdown "app.md" "section2.3" }}
                 </div>
             </div>
             <div

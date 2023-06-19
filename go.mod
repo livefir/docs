@@ -2,19 +2,23 @@ module github.com/livefir/docs
 
 go 1.20
 
-require github.com/livefir/fir v0.2.11
+require github.com/livefir/fir v0.2.18
+
+//replace github.com/livefir/fir => ../../adnaan/fir
 
 require (
+	github.com/13rac1/goldmark-embed v0.0.0-20201220231550-e6806f2de66a // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver/v3 v3.2.1 // indirect
 	github.com/Masterminds/sprig/v3 v3.2.3 // indirect
 	github.com/alecthomas/chroma v0.10.0 // indirect
+	github.com/alecthomas/chroma/v2 v2.7.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/dlclark/regexp2 v1.10.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
-	github.com/felixge/httpsnoop v1.0.0 // indirect
+	github.com/felixge/httpsnoop v1.0.3 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/go-logr/logr v1.2.4 // indirect
@@ -22,7 +26,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.14.1 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
-	github.com/golang/gddo v0.0.0-20180823221919-9d8ff1c67be5 // indirect
+	github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/schema v1.2.0 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
@@ -45,12 +49,14 @@ require (
 	github.com/tidwall/pretty v1.2.1 // indirect
 	github.com/timshannon/bolthold v0.0.0-20210913165410-232392fc8a6a // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/yuin/goldmark v1.5.4 // indirect
+	github.com/yuin/goldmark-highlighting/v2 v2.0.0-20220924101305-151362477c87 // indirect
 	go.etcd.io/bbolt v1.3.7 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.9.0 // indirect
+	golang.org/x/crypto v0.10.0 // indirect
 	golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 // indirect
-	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.8.0 // indirect
-	golang.org/x/text v0.9.0 // indirect
+	golang.org/x/net v0.11.0 // indirect
+	golang.org/x/sys v0.9.0 // indirect
+	golang.org/x/text v0.10.0 // indirect
 	k8s.io/klog/v2 v2.100.1 // indirect
 )
