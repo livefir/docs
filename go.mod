@@ -2,7 +2,7 @@ module github.com/livefir/docs
 
 go 1.20
 
-require github.com/livefir/fir v0.2.18
+require github.com/livefir/fir v0.2.19
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -42,7 +42,7 @@ require (
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/cast v1.5.1 // indirect
-	github.com/tdewolff/minify/v2 v2.12.6 // indirect
+	github.com/tdewolff/minify/v2 v2.12.7 // indirect
 	github.com/tdewolff/parse/v2 v2.6.6 // indirect
 	github.com/tidwall/gjson v1.14.4 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
