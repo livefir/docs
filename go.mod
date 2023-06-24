@@ -2,7 +2,7 @@ module github.com/livefir/docs
 
 go 1.20
 
-require github.com/livefir/fir v0.3.1
+require github.com/livefir/fir v0.3.2
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -33,8 +33,10 @@ require (
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.3 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lithammer/shortuuid/v4 v4.0.0 // indirect
+	github.com/minio/sha256-simd v1.0.1 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/go-server-timing v1.0.1 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
