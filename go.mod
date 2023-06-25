@@ -2,7 +2,7 @@ module github.com/livefir/docs
 
 go 1.20
 
-require github.com/livefir/fir v0.3.2
+require github.com/livefir/fir v0.3.3
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
