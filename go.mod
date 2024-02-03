@@ -1,6 +1,6 @@
 module github.com/livefir/docs
 
-go 1.20
+go 1.21
 
 require github.com/livefir/fir v0.3.5
 
