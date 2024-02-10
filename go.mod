@@ -1,8 +1,8 @@
 module github.com/livefir/docs
 
-go 1.21
+go 1.22
 
-require github.com/livefir/fir v0.4.0
+require github.com/livefir/fir v0.4.2
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -55,8 +55,8 @@ require (
 	github.com/yuin/goldmark-highlighting/v2 v2.0.0-20230729083705-37449abec8cc // indirect
 	go.etcd.io/bbolt v1.3.8 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.18.0 // indirect
-	golang.org/x/net v0.20.0 // indirect
-	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/crypto v0.19.0 // indirect
+	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 )
