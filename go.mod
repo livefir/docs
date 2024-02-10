@@ -2,6 +2,8 @@ module github.com/livefir/docs
 
 go 1.22
 
+toolchain go1.22.0
+
 require github.com/livefir/fir v0.4.2
 
 //replace github.com/livefir/fir => ../../adnaan/fir
