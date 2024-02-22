@@ -4,7 +4,7 @@ go 1.22
 
 toolchain go1.22.0
 
-require github.com/livefir/fir v0.4.2
+require github.com/livefir/fir v0.4.4
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -25,7 +25,7 @@ require (
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-playground/validator/v10 v10.17.0 // indirect
+	github.com/go-playground/validator/v10 v10.18.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f // indirect
@@ -35,7 +35,7 @@ require (
 	github.com/gorilla/websocket v1.5.1 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
-	github.com/klauspost/cpuid/v2 v2.2.6 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/lithammer/shortuuid/v4 v4.0.0 // indirect
 	github.com/minio/sha256-simd v1.0.1 // indirect
@@ -46,9 +46,9 @@ require (
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/cast v1.6.0 // indirect
-	github.com/tdewolff/minify/v2 v2.20.16 // indirect
-	github.com/tdewolff/parse/v2 v2.7.11 // indirect
-	github.com/tidwall/gjson v1.17.0 // indirect
+	github.com/tdewolff/minify/v2 v2.20.17 // indirect
+	github.com/tdewolff/parse/v2 v2.7.12 // indirect
+	github.com/tidwall/gjson v1.17.1 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
 	github.com/timshannon/bolthold v0.0.0-20231129192944-dca5178aa629 // indirect
