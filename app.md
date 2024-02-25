@@ -82,6 +82,6 @@ Go the the directory where you have these files and run:
 go run counter.go
 ```
 
-Open your browser and go to [http://localhost:9867](http://localhost:9867) to see the reactive counter in action. Here's how the code finally looks like:
+Open your browser and go to [http://localhost:9867](http://localhost:9867) to see the reactive counter in action.
 
 <!-- end section2.3 -->
