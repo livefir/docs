@@ -1,183 +1,160 @@
 {{ define "content" }}
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <p class="title">
-                    Build progressively enhanced reactive html apps
-                </p>
-                <p class="subtitle">
-                    using <a href="https://golang.org/">Go</a>,
-                    <a href="https://pkg.go.dev/html/template">html/template</a>
-                    & <a href="https://alpinejs.dev/">Alpine.js</a>
-                </p>
-            </div>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">Build progressively enhanced reactive html apps</p>
+      <p class="subtitle">
+        using <a href="https://golang.org/">Go</a>,
+        <a href="https://pkg.go.dev/html/template">html/template</a>
+        & <a href="https://alpinejs.dev/">Alpine.js</a>
+      </p>
+    </div>
+  </div>
+</section>
+{{/*
+<section class="">
+  <div class="container has-text-centered block">
+    <a class="button is-large is-responsive is-dark" href="/docs">
+      Get started
+    </a>
+  </div>
+</section>
+*/}}
+<section class="">
+  <div class="container content is-size-5">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="content">
+          <div class="box">{{ markdown "app.md" "hero" }}</div>
         </div>
-    </section>
-    {{/* <section class="">
-        <div class="container has-text-centered block">
-        <a
-        class="button is-large is-responsive is-dark"
-        href="/docs">
-        Get started
-        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container has-text-centered is-size-6">
+    <p class="">
+      Scroll below to see a demo & a quickstart guide
+      <i>&#8595;</i> or read about
+      <a href="https://adnaan.notion.site/Fir-2358531aced84bf1b0b1a687760fff3b"
+        >how it works</a
+      >.
+    </p>
+  </div>
+</section>
+<section class="section box" style="">
+  <div class="columns">
+    <div class="column is-5">
+      <div class="content" x-data>
+        {{ markdown "app.md" "section1.0" }}
+        <div class="block">
+          <div class="py-2 is-size-4">Count: {{ .count }}</div>
+          <form method="post">
+            <button
+              class="button is-success"
+              formaction="/?event=inc"
+              type="submit"
+            >
+              +
+            </button>
+            <button
+              class="button is-danger"
+              formaction="/?event=dec"
+              type="submit"
+            >
+              -
+            </button>
+          </form>
         </div>
-        </section>
-    */}}
-    <section class="">
-        <div class="container content is-size-5">
-            <div class="columns">
-                <div class="column is-8 is-offset-2">
-                    <div class="content">
-                        <div class="box">
-                            {{ markdown "app.md" "hero" }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+        {{ markdown "app.md" "section1.1" }}
+      </div>
+    </div>
+    <div class="column is-6 is-offset-1" x-data="{tab: 'tab1'}">
+      <div class="tabs is-boxed">
+        <ul>
+          <li :class="{ 'is-active': tab === 'tab1' }">
+            <a @click.prevent="tab = 'tab1'">counter.html</a>
+          </li>
+          <li :class="{ 'is-active': tab === 'tab2' }">
+            <a @click.prevent="tab = 'tab2'"> counter.go</a>
+          </li>
+        </ul>
+      </div>
+      <div x-show="tab === 'tab1'">
+        {{ markdown
+        "https://raw.githubusercontent.com/livefir/docs/main/examples/counter/counter.html"
+        }}
+      </div>
+      <div x-show="tab === 'tab2'">
+        {{ markdown
+        "https://raw.githubusercontent.com/livefir/docs/main/examples/counter/counter.go"
+        }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section box" style="">
+  <div class="columns">
+    <div class="column is-5">
+      <div class="content" x-data>
+        {{ markdown "app.md" "section2.0" }}
+
+        <div class="block" x-data>
+          <div class="py-2 is-size-4" @fir:[inc:ok,dec:ok]="$fir.replace()">
+            Count: {{ .count }}
+          </div>
+          <form method="post" @submit.prevent="$fir.submit()">
+            <button
+              class="button is-success"
+              formaction="/?event=inc"
+              type="submit"
+            >
+              +
+            </button>
+            <button
+              class="button is-danger"
+              formaction="/?event=dec"
+              type="submit"
+            >
+              -
+            </button>
+          </form>
         </div>
-    </section>
-    <section class="section">
-        <div class="container has-text-centered is-size-6">
-            <p class="">
-                Scroll below to see a demo & a quickstart guide
-                <i>&#8595;</i> or read about
-                <a
-                    href="https://adnaan.notion.site/Fir-2358531aced84bf1b0b1a687760fff3b"
-                    >how it works</a
-                >.
+        {{ markdown "app.md" "section2.1" }}
+        <div class="card px-2 py-2 mb-4">
+          <div class="card-content">
+            <p class="has-text-weight-semibold">
+              {{ markdown "app.md" "section2.2" }}
             </p>
+          </div>
         </div>
-    </section>
-    <section
-        class="section box"
-        style="">
-        <div class="columns">
-            <div class="column is-5">
-                <div
-                    class="content"
-                    x-data>
-                    {{ markdown "app.md" "section1.0" }}
-                    <div class="block">
-                        <div>
-                            {{ block "count" . }}
-                                <div class="py-2 is-size-4">
-                                    Count:
-                                    {{ .count }}
-                                </div>
-                            {{ end }}
-                        </div>
-                        <form method="post">
-                            <button
-                                class="button is-success"
-                                formaction="/?event=inc"
-                                type="submit">
-                                +
-                            </button>
-                            <button
-                                class="button is-danger"
-                                formaction="/?event=dec"
-                                type="submit">
-                                -
-                            </button>
-                        </form>
-                    </div>
-                    {{ markdown "app.md" "section1.1" }}
-                </div>
-            </div>
-            <div
-                class="column is-6 is-offset-1"
-                x-data="{tab: 'tab1'}">
-                <div class="tabs is-boxed">
-                    <ul>
-                        <li :class="{ 'is-active': tab === 'tab1' }">
-                            <a @click.prevent="tab = 'tab1'">counter.html</a>
-                        </li>
-                        <li :class="{ 'is-active': tab === 'tab2' }">
-                            <a @click.prevent="tab = 'tab2'"> counter.go</a>
-                        </li>
-                    </ul>
-                </div>
-                <div x-show="tab === 'tab1'">
-                    {{ markdown "https://raw.githubusercontent.com/livefir/docs/main/examples/counter/counter.html" }}
-                </div>
-                <div x-show="tab === 'tab2'">
-                    {{ markdown "https://raw.githubusercontent.com/livefir/docs/main/examples/counter/counter.go" }}
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section
-        class="section box"
-        style="">
-        <div class="columns">
-            <div class="column is-5">
-                <div
-                    class="content"
-                    x-data>
-                    {{ markdown "app.md" "section2.0" }}
-
-
-                    <div
-                        class="block"
-                        x-data>
-                        <div @fir:[inc:ok,dec:ok]::count1="$fir.replace()">
-                            {{ block "count1" . }}
-                                <div class="py-2 is-size-4">
-                                    Count:
-                                    {{ .count }}
-                                </div>
-                            {{ end }}
-                        </div>
-                        <form
-                            method="post"
-                            @submit.prevent="$fir.submit()">
-                            <button
-                                class="button is-success"
-                                formaction="/?event=inc"
-                                type="submit">
-                                +
-                            </button>
-                            <button
-                                class="button is-danger"
-                                formaction="/?event=dec"
-                                type="submit">
-                                -
-                            </button>
-                        </form>
-                    </div>
-                    {{ markdown "app.md" "section2.1" }}
-                    <div class="card px-2 py-2 mb-4">
-                        <div class="card-content">
-                            <p class="has-text-weight-semibold">
-                                {{ markdown "app.md" "section2.2" }}
-                            </p>
-                        </div>
-                    </div>
-
-                    {{ markdown "app.md" "section2.3" }}
-                </div>
-            </div>
-            <div
-                class="column is-6 is-offset-1"
-                x-data="{tab: 'tab1'}">
-                <div class="tabs is-boxed">
-                    <ul>
-                        <li :class="{ 'is-active': tab === 'tab1' }">
-                            <a @click.prevent="tab = 'tab1'">counter.html</a>
-                        </li>
-                        <li :class="{ 'is-active': tab === 'tab2' }">
-                            <a @click.prevent="tab = 'tab2'"> counter.go</a>
-                        </li>
-                    </ul>
-                </div>
-                <div x-show="tab === 'tab1'">
-                    {{ markdown "https://raw.githubusercontent.com/livefir/docs/main/examples/counter-live/counter.html" }}
-                </div>
-                <div x-show="tab === 'tab2'">
-                    {{ markdown "https://raw.githubusercontent.com/livefir/docs/main/examples/counter-live/counter.go" }}
-                </div>
-            </div>
-        </div>
-    </section>
+        {{ markdown "app.md" "section2.3" }}
+      </div>
+    </div>
+    <div class="column is-6 is-offset-1" x-data="{tab: 'tab1'}">
+      <div class="tabs is-boxed">
+        <ul>
+          <li :class="{ 'is-active': tab === 'tab1' }">
+            <a @click.prevent="tab = 'tab1'">counter.html</a>
+          </li>
+          <li :class="{ 'is-active': tab === 'tab2' }">
+            <a @click.prevent="tab = 'tab2'"> counter.go</a>
+          </li>
+        </ul>
+      </div>
+      <div x-show="tab === 'tab1'">
+        {{ markdown
+        "https://raw.githubusercontent.com/livefir/docs/main/examples/counter-live/counter.html"
+        }}
+      </div>
+      <div x-show="tab === 'tab2'">
+        {{ markdown
+        "https://raw.githubusercontent.com/livefir/docs/main/examples/counter-live/counter.go"
+        }}
+      </div>
+    </div>
+  </div>
+</section>
 {{ end }}

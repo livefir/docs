@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        {{ block "count" . }}
-            <div>Count: {{ .count }}</div>
-        {{ end }}
-        <form method="post">
-            <button
-                formaction="/?event=inc"
-                type="submit">
-                +
-            </button>
-            <button
-                formaction="/?event=dec"
-                type="submit">
-                -
-            </button>
-        </form>
-    </body>
+  <body>
+    <div>Count: {{ .count }}</div>
+
+    <form method="post">
+      <button formaction="/?event=inc" type="submit">+</button>
+      <button formaction="/?event=dec" type="submit">-</button>
+    </form>
+  </body>
 </html>

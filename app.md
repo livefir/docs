@@ -68,12 +68,20 @@ Alternatively there is a short-hand form for wiring up multiple events with the 
 </div>
 ```
 
+Moreover, `fir` is able to automatically extract a template from elements on which fir events are declared. The above snippet can be further simplified.
+
+```html
+<div @fir:[inc:ok,dec:ok]="$fir.replace()">
+   Count: {{ .count }}
+</div>
+```
+
 Go the the directory where you have these files and run:
 
 ```bash
 go run counter.go
 ```
 
-Open your browser and go to [http://localhost:9867](http://localhost:9867) to see the reactive counter in action.
+Open your browser and go to [http://localhost:9867](http://localhost:9867) to see the reactive counter in action. Here's how the code finally looks like:
 
 <!-- end section2.3 -->
