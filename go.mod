@@ -4,7 +4,7 @@ go 1.22
 
 toolchain go1.22.0
 
-require github.com/livefir/fir v0.5.0
+require github.com/livefir/fir v0.5.1
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -44,10 +44,13 @@ require (
 	github.com/mitchellh/go-server-timing v1.0.1 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
+	github.com/redis/go-redis/v9 v9.5.1 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/cast v1.6.0 // indirect
+	github.com/tdewolff/minify v2.3.6+incompatible // indirect
 	github.com/tdewolff/minify/v2 v2.20.18 // indirect
+	github.com/tdewolff/parse v2.3.4+incompatible // indirect
 	github.com/tdewolff/parse/v2 v2.7.12 // indirect
 	github.com/teris-io/shortid v0.0.0-20220617161101-71ec9f2aa569 // indirect
 	github.com/tidwall/gjson v1.17.1 // indirect
@@ -59,7 +62,7 @@ require (
 	github.com/yuin/goldmark-highlighting/v2 v2.0.0-20230729083705-37449abec8cc // indirect
 	go.etcd.io/bbolt v1.3.9 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.19.0 // indirect
+	golang.org/x/crypto v0.20.0 // indirect
 	golang.org/x/net v0.21.0 // indirect
 	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
