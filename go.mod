@@ -4,7 +4,7 @@ go 1.22
 
 toolchain go1.22.0
 
-require github.com/livefir/fir v0.5.1
+require github.com/livefir/fir v0.5.2
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
