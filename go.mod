@@ -4,7 +4,7 @@ go 1.22
 
 toolchain go1.22.0
 
-require github.com/livefir/fir v0.5.2
+require github.com/livefir/fir v0.6.0
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -25,7 +25,7 @@ require (
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-playground/validator/v10 v10.18.0 // indirect
+	github.com/go-playground/validator/v10 v10.19.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f // indirect
