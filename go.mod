@@ -4,7 +4,7 @@ go 1.22
 
 toolchain go1.22.0
 
-require github.com/livefir/fir v0.6.1
+require github.com/livefir/fir v0.6.2
 
 //replace github.com/livefir/fir => ../../adnaan/fir
 
@@ -14,7 +14,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.2.1 // indirect
 	github.com/Masterminds/sprig/v3 v3.2.3 // indirect
 	github.com/alecthomas/chroma v0.10.0 // indirect
-	github.com/alecthomas/chroma/v2 v2.12.0 // indirect
+	github.com/alecthomas/chroma/v2 v2.13.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
@@ -56,7 +56,7 @@ require (
 	github.com/tidwall/gjson v1.17.1 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	github.com/timshannon/bolthold v0.0.0-20231129192944-dca5178aa629 // indirect
+	github.com/timshannon/bolthold v0.0.0-20240314194003-30aac6950928 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/yuin/goldmark v1.7.0 // indirect
 	github.com/yuin/goldmark-highlighting/v2 v2.0.0-20230729083705-37449abec8cc // indirect
